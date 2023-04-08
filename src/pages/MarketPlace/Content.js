@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { Col, Row } from "antd";
 import ContentItem from "./ContentItem";
 import { useSelector } from "react-redux";
@@ -6,8 +6,7 @@ import { useSelector } from "react-redux";
 function Content({ searchItem = "" }) {
   const products = useSelector((store) => store?.products?.results);
   const filterItem = useSelector((store) => store?.filterItem ?? {});
-  const keys = Object.keys(filterItem);
-
+  console.log(filterItem);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 20;
   // Filter items based on search query
